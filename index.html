@@ -4,18 +4,18 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
-<meta name="description" content="Yuki Sakai — Web Producer · AI Product Builder. Portfolio: Adobe K.K. web production experience, AI-built prototypes, and case studies.">
+<meta name="description" content="Yuki Sakai — Web Producer · AI Product Builder. Portfolio: Adobe K.K. web production experience, self-directed products, and case studies.">
 <title>Yuki Sakai — Web Producer · AI Product Builder</title>
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314171C'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23FF0000'/%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Yuki Sakai — Web Producer · AI Product Builder">
-<meta property="og:description" content="Portfolio: Adobe K.K. web production experience, AI-built prototypes, and case studies. Tokyo, JP.">
+<meta property="og:description" content="Portfolio: Adobe K.K. web production experience, self-directed products, and case studies. Tokyo, JP.">
 <meta property="og:image" content="og-image.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Yuki Sakai — Web Producer · AI Product Builder">
-<meta name="twitter:description" content="Portfolio: Adobe K.K. web production experience, AI-built prototypes, and case studies. Tokyo, JP.">
+<meta name="twitter:description" content="Portfolio: Adobe K.K. web production experience, self-directed products, and case studies. Tokyo, JP.">
 <meta name="twitter:image" content="og-image.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -119,6 +119,9 @@
   .bracket:hover::after, .bracket.in-view::after{ opacity:1; transform:translate(0,0);}
 
   /* ---------- nav ---------- */
+  section[id]{
+    scroll-margin-top:84px;
+  }
   header.nav{
     position:fixed;
     top:0; left:0; right:0;
@@ -1226,15 +1229,15 @@
   }
   .work-card:hover .work-thumb img{ transform:scale(1.045); }
   .work-thumb-logo{
-    background:#FF0000;
+    background:#EC1001;
     display:flex;
     align-items:center;
     justify-content:center;
   }
   .work-thumb-logo img{
-    width:52%;
-    height:auto;
-    object-fit:contain;
+    width:100%;
+    height:100%;
+    object-fit:cover;
   }
   .work-card:hover .work-thumb-logo img{ transform:scale(1.06); }
   .work-thumb-note{
@@ -1533,15 +1536,11 @@
       </h1>
       <p class="role-line">Web Producer<span class="sep">·</span>AI Product Builder</p>
       <p class="pitch">
-        Two and a half years shipping production web features for design tools —
-        including an in-house dispatch on Adobe's own web team — paired with a growing habit
-        of building AI-assisted prototypes end to end, from concept to working code.
+        A statistics degree, years in global procurement, a self-funded pivot into
+        web design, then two and a half years on Adobe's own web team. Different
+        steps, same habit: find what's actually happening, then fix it.
         <strong>Clarity first.</strong>
       </p>
-      <div class="cta-row">
-        <a href="#work" class="btn btn-primary">View the work →</a>
-        <a href="#contact" class="btn btn-ghost">Get in touch</a>
-      </div>
       <div class="meta-panel">
         <div class="meta-item">
           <div class="meta-label">Location</div>
@@ -1640,7 +1639,7 @@
             </div>
             <div class="lang-row">
               <span class="lang-name">Chinese</span>
-              <span class="lang-level">HSK (Chinese Proficiency Test) — Level 4</span>
+              <span class="lang-level">HSK (Chinese Proficiency Test) — Level&nbsp;4</span>
             </div>
           </div>
         </div>
@@ -1685,16 +1684,16 @@
           <button class="detail-toggle" data-target="detail-cms" aria-expanded="false">See detail <span class="chevron">→</span></button>
         </div>
 
-        <div class="highlight-card bracket stagger-child" id="card-ideathon">
-          <span class="highlight-tag">AI Ideathon 2026</span>
-          <div class="highlight-metric">Tied for 1st</div>
-          <h3 class="highlight-title">Tied for first, lost on tiebreaker</h3>
+        <div class="highlight-card bracket stagger-child" id="card-hackathon">
+          <span class="highlight-tag">Adobe Hackathon 2025</span>
+          <div class="highlight-metric">Asia Regional Finalist</div>
+          <h3 class="highlight-title">Passed Asia Regional judging (80+ teams)</h3>
           <p class="highlight-text">
-            Pitched and prototyped an AI-driven concept in an internal ideathon,
-            finishing tied for first place among all entries before narrowly losing
-            the tiebreaker.
+            Solo-built AI Page Inspector concept that scans web pages for design
+            inconsistencies. Passed Adobe's internal legal, security, and compliance
+            review and advanced through Asia Regional judging against 80+ teams.
           </p>
-          <button class="detail-toggle" data-target="detail-ideathon" aria-expanded="false">See detail <span class="chevron">→</span></button>
+          <button class="detail-toggle" data-target="detail-hackathon" aria-expanded="false">See detail <span class="chevron">→</span></button>
         </div>
 
         <div class="highlight-card bracket stagger-child" id="card-acrobat-studio">
@@ -1710,20 +1709,20 @@
           <button class="detail-toggle" data-target="detail-acrobat-studio" aria-expanded="false">See detail <span class="chevron">→</span></button>
         </div>
 
-        <div class="highlight-card bracket stagger-child" id="card-hackathon">
-          <span class="highlight-tag">Adobe Hackathon 2025</span>
-          <div class="highlight-metric">Asia Regional Finalist</div>
-          <h3 class="highlight-title">Passed Asia Regional judging (80+ teams)</h3>
+        <div class="highlight-card bracket stagger-child" id="card-ideathon">
+          <span class="highlight-tag">AI Ideathon 2026</span>
+          <div class="highlight-metric">Tied for 1st</div>
+          <h3 class="highlight-title">Tied for first, lost on tiebreaker</h3>
           <p class="highlight-text">
-            Solo-built AI Page Inspector concept that scans web pages for design
-            inconsistencies. Passed Adobe's internal legal, security, and compliance
-            review and advanced through Asia Regional judging against 80+ teams.
+            Pitched and prototyped an AI-driven concept in an internal ideathon,
+            finishing tied for first place among all entries before narrowly losing
+            the tiebreaker.
           </p>
-          <button class="detail-toggle" data-target="detail-hackathon" aria-expanded="false">See detail <span class="chevron">→</span></button>
+          <button class="detail-toggle" data-target="detail-ideathon" aria-expanded="false">See detail <span class="chevron">→</span></button>
         </div>
 
         <div class="highlight-card bracket stagger-child" id="card-ai-advocacy">
-          <span class="highlight-tag">framelunch · Director-team presentation</span>
+          <span class="highlight-tag">framelunch · Director-team training</span>
           <div class="highlight-metric">AI Advocacy</div>
           <h3 class="highlight-title">Led AI adoption inside the director team</h3>
           <p class="highlight-text">
@@ -1880,7 +1879,7 @@
         <div class="detail-panel" id="detail-ai-advocacy">
           <div class="detail-panel-head">
             <div>
-              <span class="detail-panel-tag">framelunch · Director-team presentation</span>
+              <span class="detail-panel-tag">framelunch · Director-team training</span>
               <h4 class="detail-panel-title">Led AI adoption inside the director team</h4>
             </div>
             <button class="detail-close" aria-label="Close detail">×</button>
@@ -2011,8 +2010,9 @@
           <span class="strength-num">03</span>
           <h3 class="strength-title">Trusted to lead</h3>
           <p class="strength-text">
-            Stepped in as hackathon project lead when the regular lead was out sick —
-            a level of trust that goes beyond a standard vendor engagement.
+            Stepped in as project lead on the Acrobat 3-in-1 project when the regular
+            lead was out sick — a level of trust that goes beyond a standard
+            vendor engagement.
           </p>
         </div>
         <div class="strength-card stagger-child">
@@ -2036,7 +2036,7 @@
           <span class="section-index">04 — Work</span>
           <h2 class="section-title">Things I've built</h2>
         </div>
-        <p class="section-sub">Self-directed products, from idea to working prototype.</p>
+        <p class="section-sub">Self-directed products and client work, from idea to working prototype.</p>
       </div>
 
       <div class="work-carousel-wrap">
@@ -2096,7 +2096,6 @@
         <article class="work-card bracket stagger-child">
           <a class="work-thumb" href="https://otsuka-kimihiko.com/" target="_blank" rel="noopener">
             <img src="work-otsuka.png" alt="Otsuka Kimihiko official site — current version">
-            <span class="work-thumb-note">Current version, redesigned since</span>
           </a>
           <div class="work-body">
             <span class="work-eyebrow">NSY (dispatch) · Web design, 2023</span>
@@ -2116,7 +2115,7 @@
             <img src="work-sme.png" alt="SME Support Japan site banner">
           </a>
           <div class="work-body">
-            <span class="work-eyebrow">Nissei Eblo · CMS operator, 2023 (team)</span>
+            <span class="work-eyebrow">Nissei Eblo (dispatch) · CMS operator, 2023 (team)</span>
             <h3 class="work-title">SME Support Japan — Page Authoring</h3>
             <p class="work-text">
               Authored and published pages for one of Japan's largest SME-support
@@ -2141,21 +2140,20 @@
           <span class="section-index">05 — Skill</span>
           <h2 class="section-title">Toolkit</h2>
         </div>
-        <p class="section-sub">What I reach for, in roughly the order I reach for it.</p>
+        <p class="section-sub">The tools and disciplines behind the work.</p>
       </div>
       <div class="skill-cloud reveal">
         <span class="skill-pill stagger-child">Jira</span>
+        <span class="skill-pill stagger-child">Project management</span>
+        <span class="skill-pill stagger-child">Cross-team production ops</span>
         <span class="skill-pill stagger-child">Figma</span>
         <span class="skill-pill stagger-child">Miro</span>
-        <span class="skill-pill stagger-child">HTML / CSS / JavaScript</span>
         <span class="skill-pill stagger-child">Adobe Creative Cloud</span>
         <span class="skill-pill stagger-child">Canva</span>
-        <span class="skill-pill stagger-child">Google Apps Script</span>
+        <span class="skill-pill stagger-child">HTML / CSS / JavaScript</span>
         <span class="skill-pill stagger-child">Python</span>
         <span class="skill-pill stagger-child">Claude / LLM tooling</span>
         <span class="skill-pill stagger-child">Data analysis &amp; statistics</span>
-        <span class="skill-pill stagger-child">Project management</span>
-        <span class="skill-pill stagger-child">Cross-team production ops</span>
       </div>
     </div>
   </section>
