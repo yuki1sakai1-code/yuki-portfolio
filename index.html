@@ -268,6 +268,9 @@
     background:var(--paper);
     overflow:hidden;
   }
+  @media (max-width:640px){
+    section.hero{ padding:96px 0 72px; }
+  }
   section.hero::before{
     content:"";
     position:absolute;
@@ -552,6 +555,9 @@
   /* ---------- generic section framing ---------- */
   section{ padding:96px 0; border-bottom:1px solid var(--line); position:relative; }
   section:last-of-type{ border-bottom:none; }
+  @media (max-width:640px){
+    section{ padding:64px 0; }
+  }
 
   /* Adobe-style section backgrounds */
   #about{
@@ -1814,11 +1820,12 @@
         <div class="highlight-card bracket stagger-child" id="card-hackathon">
           <span class="highlight-tag">Adobe Hackathon 2025</span>
           <div class="highlight-metric">Asia Regional Finalist</div>
-          <h3 class="highlight-title">Passed Asia Regional judging (80+ teams)</h3>
+          <h3 class="highlight-title">Passed Asia Regional judging (~30 of 80+ teams)</h3>
           <p class="highlight-text">
-            Solo-built AI Page Inspector concept that scans web pages for design
-            inconsistencies. Passed Adobe's internal review process and advanced
-            through Asia Regional judging against 80+ teams.
+            Originated the concept and built the initial AI Page Inspector prototype
+            solo, then worked with a small team through Asia Regional Finals — an
+            engineer refined the prototype, a teammate produced the video, and the
+            live presentation and product Q&amp;A were split among the team.
           </p>
           <button class="detail-toggle" data-target="detail-hackathon" aria-expanded="false">See detail <span class="chevron">→</span></button>
         </div>
@@ -1979,27 +1986,27 @@
           <div class="detail-panel-head">
             <div>
               <span class="detail-panel-tag">Adobe Hackathon 2025</span>
-              <h4 class="detail-panel-title">Passed Asia Regional judging (80+ teams)</h4>
+              <h4 class="detail-panel-title">Passed Asia Regional judging (~30 of 80+ teams)</h4>
             </div>
             <button class="detail-close" aria-label="Close detail">×</button>
           </div>
           <div class="detail-facts">
-            <div><span class="detail-label">Result</span><span class="detail-value">Asia Regional Finalist (80+ teams)</span></div>
+            <div><span class="detail-label">Result</span><span class="detail-value">Asia Regional Finalist — one of ~30 teams (out of 80+ entries)</span></div>
             <div><span class="detail-label">Project</span><span class="detail-value">AI Page Inspector</span></div>
-            <div><span class="detail-label">Role</span><span class="detail-value">Solo project lead, developer, presenter</span></div>
+            <div><span class="detail-label">Role</span><span class="detail-value">Originated concept &amp; built initial prototype solo; team lead for finals</span></div>
             <div><span class="detail-label">Year</span><span class="detail-value">2025</span></div>
           </div>
           <div class="detail-section">
             <h4>Challenge</h4>
-            <p>Built a solo tool concept that uses AI to scan web pages and flag design inconsistencies — spacing, type, color — before they reach QA. The project needed to pass Adobe's internal review process.</p>
+            <p>Originated a tool concept that uses AI to scan web pages and flag design inconsistencies — spacing, type, color — before they reach QA. The project needed to pass Adobe's internal review process to advance.</p>
           </div>
           <div class="detail-section">
             <h4>Approach</h4>
-            <p>Built the working prototype end to end for a company-wide hackathon, handling all aspects from concept to implementation. Successfully navigated Adobe's internal review processes to ensure compliance.</p>
+            <p>Built the initial working prototype solo, end to end, and navigated Adobe's internal review process to qualify for Asia Regional Finals. For the finals round, worked with a small team: an engineer refined the prototype, a teammate handled video production, and the live presentation and product Q&amp;A were split between two to three people, including myself. My part in the finals was fielding the product Q&amp;A.</p>
           </div>
           <div class="detail-section">
             <h4>Result</h4>
-            <p>Passed Asia Regional judging against 80+ competing teams. While not launched in production — the underlying need is now better served by general-purpose AI assistants — the achievement validated both the technical approach and the ability to deliver under strict corporate constraints.</p>
+            <p>Advanced through Asia Regional judging — one of roughly 30 teams to pass out of 80+ entries. While not launched in production — the underlying need is now better served by general-purpose AI assistants — the achievement validated both the technical approach and the ability to deliver under strict corporate constraints.</p>
           </div>
         </div>
 
@@ -2221,15 +2228,18 @@
             <img src="adobe-logo.png" alt="Adobe">
           </div>
           <div class="work-body">
-            <span class="work-eyebrow">Hackathon 2025 · Asia Regional Finalist (80+ teams)</span>
+            <span class="work-eyebrow">Hackathon 2025 · Asia Regional Finalist (~30 of 80+ teams)</span>
             <h3 class="work-title">AI Page Inspector</h3>
             <p class="work-text">
-              A solo-built tool concept that uses AI to scan a web page and flag design
-              inconsistencies — spacing, type, color — before they reach QA. Built the
-              working prototype end to end for a company-wide hackathon, and passed
-              an internal review process. Not launched into production — the
-              underlying need is now better served by general-purpose AI assistants,
-              especially for understanding images inside design tools like Figma.
+              A tool concept that uses AI to scan a web page and flag design
+              inconsistencies — spacing, type, color — before they reach QA.
+              Originated the idea and built the initial prototype solo, then
+              qualified for Asia Regional Finals, where a small team took it further —
+              an engineer refined the prototype and a teammate produced the video,
+              with the live presentation and Q&amp;A split among the team. Not launched
+              into production — the underlying need is now better served by
+              general-purpose AI assistants, especially for understanding images
+              inside design tools like Figma.
             </p>
           </div>
         </article>
