@@ -7,7 +7,7 @@
 <meta name="description" content="Yuki Sakai — Web Producer · AI Product Builder. Portfolio: Adobe K.K. web production experience, self-directed products, and case studies.">
 <title>Yuki Sakai — Web Producer · AI Product Builder</title>
 
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2314171C'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23FF0000'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232D9CFF'/%3E%3Cstop offset='50%25' stop-color='%237B61FF'/%3E%3Cstop offset='100%25' stop-color='%23B537F2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='8' fill='%23FAFAF8'/%3E%3Crect x='1' y='1' width='30' height='30' rx='7' fill='none' stroke='%23C7C5BE' stroke-width='1.5'/%3E%3Cpath d='M9 15 V9 H15' stroke='url(%23g)' stroke-width='2.3' fill='none' stroke-linecap='square'/%3E%3Cpath d='M23 17 V23 H17' stroke='url(%23g)' stroke-width='2.3' fill='none' stroke-linecap='square'/%3E%3C/svg%3E">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Yuki Sakai — Web Producer · AI Product Builder">
@@ -167,7 +167,7 @@
   }
   .logo .dot{
     width:7px; height:7px; border-radius:50%;
-    background:var(--accent);
+    background:linear-gradient(135deg, #2D9CFF 0%, #7B61FF 50%, #B537F2 100%);
     display:inline-block;
   }
   nav.links{
@@ -449,7 +449,17 @@
     margin-bottom:28px;
     font-weight:600;
   }
-  .eyebrow .rule{ width:40px; height:2px; background:var(--accent); }
+  .eyebrow .rule{
+    width:40px;
+    height:2px;
+    background:linear-gradient(90deg, #FF0000 0%, #D91404 50%, #CC0000 100%);
+  }
+  .eyebrow-text{
+    background:linear-gradient(90deg, #FF0000 0%, #D91404 50%, #CC0000 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
 
   h1.name{
     font-family:var(--display);
@@ -823,35 +833,91 @@
     margin:0;
   }
 
-  .strength-page-list{
+  .adobe-page-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+  }
+  @media (max-width:700px){
+    .adobe-page-grid{grid-template-columns:1fr;}
+  }
+  .adobe-page-card{
     display:block;
-    margin:0;
-    padding:0;
-    list-style:none;
+    text-decoration:none;
+    color:inherit;
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    overflow:hidden;
+    position:relative;
+    transition:all .3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:0 1px 3px rgba(0,0,0,0.05);
   }
-  .strength-page-list li{
-    font-size:13.5px;
-    color:var(--ink-soft);
-    padding:6px 0;
+  .adobe-page-card:hover{
+    border-color:var(--accent-text);
+    transform:translateY(-4px);
+    box-shadow:0 8px 24px rgba(255,0,0,0.15);
+  }
+  .adobe-page-thumb{
+    aspect-ratio:16/9;
+    background:linear-gradient(160deg,#f4f3f0,#ffffff);
     display:flex;
-    align-items:baseline;
-    gap:8px;
-    flex-wrap:wrap;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+    position:relative;
+    padding:22px;
+    border-bottom:1px solid var(--line);
   }
-  .strength-page-list li::before{
-    content:"—";
+  .adobe-page-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+    display:block;
+    border-radius:8px;
+    box-shadow:0 10px 28px rgba(20,23,28,.14);
+    transition:transform .45s ease;
+  }
+  .adobe-page-card:hover .adobe-page-thumb img{ transform:scale(1.025); }
+  .adobe-page-thumb-placeholder{
+    color:#fff;
+    text-align:center;
+    padding:20px;
+    font-family:var(--mono);
+    font-size:12px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    opacity:.92;
+  }
+  .adobe-page-thumb-placeholder .big{
+    display:block;
+    font-family:var(--display);
+    font-weight:700;
+    font-size:20px;
+    text-transform:none;
+    letter-spacing:0;
+    margin-bottom:6px;
+  }
+  .adobe-page-body{
+    padding:28px 26px 26px;
+  }
+  .adobe-page-tag{
+    font-family:var(--mono);
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:.06em;
     color:var(--accent-text);
-    flex-shrink:0;
+    margin-bottom:14px;
+    display:block;
+    font-weight:600;
   }
-  .strength-page-list a{
-    color:var(--ink);
-    text-decoration:underline;
-    text-underline-offset:3px;
-    text-decoration-color:var(--line-strong);
-    transition:color .2s ease, text-decoration-color .2s ease;
+  .adobe-page-title{
+    font-family:var(--display);
+    font-weight:600;
+    font-size:19px;
+    margin:0 0 10px;
   }
-  .strength-page-list a:hover{ color:var(--accent-text); text-decoration-color:var(--accent-text); }
-  .page-list-note{
+  .adobe-page-note{
     font-family:var(--mono);
     font-size:11.5px;
     text-transform:uppercase;
@@ -860,15 +926,27 @@
     opacity:.75;
   }
   .adobe-pages-block{
-    margin-top:36px;
-    padding-top:28px;
-    border-top:1px solid var(--line);
+    margin-top:52px;
+    padding-top:4px;
   }
   .adobe-pages-title{
     font-family:var(--display);
     font-weight:700;
-    font-size:16px;
-    margin:0 0 14px;
+    font-size:27px;
+    margin:0 0 10px;
+  }
+  .adobe-pages-lead{
+    font-size:15px;
+    color:var(--ink-soft);
+    max-width:640px;
+    margin:0 0 24px;
+    line-height:1.6;
+  }
+  .adobe-page-desc{
+    font-size:13.5px;
+    color:var(--ink-soft);
+    line-height:1.55;
+    margin:0 0 10px;
   }
 
   .detail-toggle{
@@ -1578,7 +1656,7 @@
     </div>
     <div class="hero-silhouette" role="presentation"></div>
     <div class="wrap">
-      <div class="eyebrow"><span class="rule"></span>PORTFOLIO — 2026</div>
+      <div class="eyebrow"><span class="rule"></span><span class="eyebrow-text">PORTFOLIO</span><span class="rule"></span></div>
       <h1 class="name">
         <span class="romaji">Yuki Sakai<span class="kanji">酒井祐貴</span></span>
       </h1>
@@ -1622,8 +1700,8 @@
           <span class="about-block-label">The Path</span>
           <p>
             I didn't start in tech. For four years I ran production schedules at a food
-            manufacturer, then spent three more in global procurement — negotiating directly
-            with suppliers in China and the US, including supplier visits in China. In 2017 I made a deliberate bet on design:
+            manufacturer, then spent four and a half more in global procurement — negotiating directly
+            with suppliers in China and the US, including supplier visits in China. In 2022 I made a deliberate bet on design:
             left the role, self-funded six months at a career school to learn HTML, CSS,
             JavaScript, Illustrator, and Photoshop, and started over as a junior web designer.
           </p>
@@ -1654,7 +1732,7 @@
             </div>
             <div class="path-step">
               <div class="path-step-year">2024–26</div>
-              <div class="path-step-text">framelunch → <span class="emph">Adobe K.K.</span> — Embedded Web Producer<span>2.5 years, dispatched from framelunch; promoted to Senior Web Producer</span></div>
+              <div class="path-step-text">framelunch → <span class="emph">Adobe K.K.</span> — Embedded Web Producer<span>2.5 years, dispatched from framelunch; promoted to Senior Web Producer (vendor), Dec 2025</span></div>
             </div>
             <div class="path-step">
               <div class="path-step-year">2026–</div>
@@ -1723,9 +1801,10 @@
           <div class="highlight-metric">Dexter → Milo → DA</div>
           <h3 class="highlight-title">Carried a page through two CMS migrations</h3>
           <p class="highlight-text">
-            Drove the migration off the legacy Dexter framework onto Milo (Microsoft
-            SharePoint-based) — a heavy lift across a completely different CMS — then
-            carried the same page through the follow-on move from Milo onto DA, Adobe's
+            Drove the migration off the legacy Dexter framework (Adobe Experience
+            Manager / AEM) onto Milo (Adobe's Edge Delivery Services) — a heavy lift
+            across a completely different CMS — then carried the same page through
+            the follow-on move from Milo onto DA (Document Authoring), Adobe's
             own in-house platform, a comparatively lighter transition since it stayed
             within Adobe's ecosystem.
           </p>
@@ -1738,8 +1817,8 @@
           <h3 class="highlight-title">Passed Asia Regional judging (80+ teams)</h3>
           <p class="highlight-text">
             Solo-built AI Page Inspector concept that scans web pages for design
-            inconsistencies. Passed Adobe's internal legal, security, and compliance
-            review and advanced through Asia Regional judging against 80+ teams.
+            inconsistencies. Passed Adobe's internal review process and advanced
+            through Asia Regional judging against 80+ teams.
           </p>
           <button class="detail-toggle" data-target="detail-hackathon" aria-expanded="false">See detail <span class="chevron">→</span></button>
         </div>
@@ -1795,7 +1874,7 @@
             </div>          <div class="detail-facts">
             <div><span class="detail-label">Role</span><span class="detail-value">Procurement / International Trade Specialist</span></div>
             <div><span class="detail-label">Company</span><span class="detail-value">Fujix Co., Ltd. (2017–2022)</span></div>
-            <div><span class="detail-label">Operation</span><span class="detail-value">China factory robot parts procurement &amp; international trade</span></div>
+            <div><span class="detail-label">Operation</span><span class="detail-value">China factory battery procurement &amp; international trade</span></div>
             <div><span class="detail-label">Recognition</span><span class="detail-value">2019 Internal Improvement Contest — 3rd place</span></div>
           </div>
           <div class="detail-section">
@@ -1822,13 +1901,13 @@
           </div>
           <div class="detail-facts">
             <div><span class="detail-label">Role</span><span class="detail-value">Web Producer / Migration Lead</span></div>
-            <div><span class="detail-label">Scope</span><span class="detail-value">Adobe Digital Media / DC pages</span></div>
+            <div><span class="detail-label">Scope</span><span class="detail-value">Adobe Document Cloud (DC) pages</span></div>
             <div><span class="detail-label">Challenge</span><span class="detail-value">Major CMS migrations across completely different platforms</span></div>
             <div><span class="detail-label">Solution</span><span class="detail-value">Systematic migration approach, cross-platform adaptability</span></div>
           </div>
           <div class="detail-section">
             <h4>Challenge</h4>
-            <p>Adobe's web platform underwent two migrations in succession: first off the legacy Dexter framework onto Milo (Microsoft SharePoint-based) — a heavy lift across a completely different CMS — then from Milo onto DA, Adobe's own in-house platform.</p>
+            <p>Adobe's web platform underwent two migrations in succession: first off the legacy Dexter framework (Adobe Experience Manager / AEM) onto Milo (Adobe's Edge Delivery Services, document-authored via Microsoft SharePoint) — a heavy lift across a completely different CMS — then from Milo onto DA (Document Authoring), Adobe's own in-house platform.</p>
           </div>
           <div class="detail-section">
             <h4>Approach</h4>
@@ -1912,7 +1991,7 @@
           </div>
           <div class="detail-section">
             <h4>Challenge</h4>
-            <p>Built a solo tool concept that uses AI to scan web pages and flag design inconsistencies — spacing, type, color — before they reach QA. The project needed to pass Adobe's strict internal legal, security, and compliance review.</p>
+            <p>Built a solo tool concept that uses AI to scan web pages and flag design inconsistencies — spacing, type, color — before they reach QA. The project needed to pass Adobe's internal review process.</p>
           </div>
           <div class="detail-section">
             <h4>Approach</h4>
@@ -1920,7 +1999,7 @@
           </div>
           <div class="detail-section">
             <h4>Result</h4>
-            <p>Passed Asia Regional judging against 80+ competing teams. While not launched in production (Claude emerged around the same time, making the concept better served by integration directly), the achievement validated both the technical approach and the ability to deliver under strict corporate constraints.</p>
+            <p>Passed Asia Regional judging against 80+ competing teams. While not launched in production — the underlying need is now better served by general-purpose AI assistants — the achievement validated both the technical approach and the ability to deliver under strict corporate constraints.</p>
           </div>
         </div>
 
@@ -1981,6 +2060,7 @@
           </div>
           <div class="timeline-item">
             <div class="timeline-item-title">Dexter → Milo — AEM migration</div>
+            <div class="timeline-item-sub">Adobe Experience Manager → Adobe Edge Delivery Services</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-item-title">Summit 2024 — Page updates</div>
@@ -1998,16 +2078,21 @@
           </div>
           <div class="timeline-item">
             <div class="timeline-item-title">Milo → DA — CMS migration</div>
+            <div class="timeline-item-sub">Edge Delivery Services → Document Authoring</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-item-title">Acrobat Studio — Page launch</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-item-title">DC Batch 2 — Launch contribution</div>
+            <div class="timeline-item-title">DC — Feature release launch contribution</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-item-title">Hackathon 2025 — Passed Asia Regional judging</div>
             <div class="timeline-item-sub">Project lead, presentation, and product build</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-item-title">Promoted — Senior Web Producer (vendor)</div>
+            <div class="timeline-item-sub">December 2025</div>
           </div>
         </div>
 
@@ -2015,17 +2100,20 @@
           <div class="timeline-year-label">2026 <span class="yr-tag">Year 3</span></div>
 
           <div class="timeline-item">
-            <div class="timeline-item-title">DCLO — Project lead</div>
+            <div class="timeline-item-title">Partner promo — Page creation &amp; updates</div>
+            <div class="timeline-item-sub">Built and maintained the page, coordinating directly with stakeholders</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-item-title">3-in-1 page — Update, contribution &amp; lead</div>
+            <div class="timeline-item-title">Acrobat bundle page — Update &amp; Japan-page lead</div>
+            <div class="timeline-item-sub">Page updates, scope finalization, QA, and coordination with the global team</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-item-title">AI API key — How to get an AI API key in Adobe</div>
-            <div class="timeline-item-sub">Presented to APAC</div>
+            <div class="timeline-item-sub">Compiled a unified guide for sourcing and getting legal approval for an API key, based on lessons from Hackathon 2025 — presented it to APAC</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-item-title">Soft bundle page — Contribution</div>
+            <div class="timeline-item-title">Bundle promo page — Creation &amp; updates</div>
+            <div class="timeline-item-sub">Built and maintained the page, coordinating directly with stakeholders</div>
           </div>
           <div class="timeline-item">
             <div class="timeline-item-title">Acrobat Studio conversion — Contribution</div>
@@ -2058,7 +2146,7 @@
           <span class="strength-num">03</span>
           <h3 class="strength-title">Trusted to lead</h3>
           <p class="strength-text">
-            Stepped in as project lead on the Acrobat 3-in-1 project when the regular
+            Stepped in as project lead on the Acrobat bundle project when the regular
             lead was out sick — a level of trust that goes beyond a standard
             vendor engagement.
           </p>
@@ -2073,19 +2161,43 @@
           </p>
         </div>
       </div>
-
       <div class="adobe-pages-block reveal">
         <h3 class="adobe-pages-title">Pages I Primarily Worked On</h3>
-        <ul class="strength-page-list">
-          <li>
-            <a href="https://business.adobe.com/jp/customer-success-stories.html" target="_blank" rel="noopener">Adobe Business — Customer Success Stories</a>
-            <span class="page-list-note">and related pages</span>
-          </li>
-          <li>
-            <a href="https://www.adobe.com/jp/acrobat.html" target="_blank" rel="noopener">Adobe Acrobat</a>
-            <span class="page-list-note">and related pages</span>
-          </li>
-        </ul>
+        <p class="adobe-pages-lead">
+          Day-to-day ownership of two of Adobe Japan's highest-traffic properties —
+          from recurring page updates to full launches.
+        </p>
+        <div class="adobe-page-grid reveal">
+          <a class="adobe-page-card bracket stagger-child" href="https://business.adobe.com/jp/customer-success-stories.html" target="_blank" rel="noopener">
+            <div class="adobe-page-thumb">
+              <img src="page-css-thumb.png" alt="Adobe Business — Customer Success Stories page">
+            </div>
+            <div class="adobe-page-body">
+              <span class="adobe-page-tag">business.adobe.com/jp · 2024–2025</span>
+              <h4 class="adobe-page-title">Adobe Business — Customer Success Stories</h4>
+              <p class="adobe-page-desc">
+                Authored and published Japan-market customer case studies, including
+                the DX Customer Success Story, plus ongoing page maintenance.
+              </p>
+              <span class="adobe-page-note">+ its sub-pages</span>
+            </div>
+          </a>
+          <a class="adobe-page-card bracket stagger-child" href="https://www.adobe.com/jp/acrobat.html" target="_blank" rel="noopener">
+            <div class="adobe-page-thumb">
+              <img src="page-acrobat-thumb.png" alt="Adobe Acrobat page with AI Assistant">
+            </div>
+            <div class="adobe-page-body">
+              <span class="adobe-page-tag">adobe.com/jp · 2024–2026</span>
+              <h4 class="adobe-page-title">Adobe Acrobat</h4>
+              <p class="adobe-page-desc">
+                Owned recurring updates across Acrobat's Japan pages — plan and
+                pricing pages, feature launches, and campaigns — including the
+                Acrobat Studio launch and the Acrobat bundle page project.
+              </p>
+              <span class="adobe-page-note">+ its sub-pages</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -2115,10 +2227,9 @@
               A solo-built tool concept that uses AI to scan a web page and flag design
               inconsistencies — spacing, type, color — before they reach QA. Built the
               working prototype end to end for a company-wide hackathon, and passed
-              Adobe's internal legal, security, and compliance review. Not launched in
-              production — Claude emerged around the same time, and the concept is
-              better served by building it into Claude directly, especially for
-              understanding images inside Figma.
+              an internal review process. Not launched into production — the
+              underlying need is now better served by general-purpose AI assistants,
+              especially for understanding images inside design tools like Figma.
             </p>
           </div>
         </article>
@@ -2164,9 +2275,7 @@
             <h3 class="work-title">Hyogo Prefectural Assembly — Official Site</h3>
             <p class="work-text">
               Built the official website for a Hyogo Prefectural Assembly member from
-              scratch in HTML, CSS, and JavaScript during a dispatch role. The site has
-              since been redesigned by the client on WordPress — the screenshot shown
-              reflects the current version, not the original build.
+              scratch in HTML, CSS, and JavaScript during a dispatch role.
             </p>
             <a class="work-live-link" href="https://otsuka-kimihiko.com/" target="_blank" rel="noopener">Visit site →</a>
           </div>
@@ -2213,6 +2322,7 @@
         <span class="skill-pill stagger-child">Miro</span>
         <span class="skill-pill stagger-child">Adobe Creative Cloud</span>
         <span class="skill-pill stagger-child">Canva</span>
+        <span class="skill-pill stagger-child">Vrew</span>
         <span class="skill-pill stagger-child">HTML / CSS / JavaScript</span>
         <span class="skill-pill stagger-child">Python</span>
         <span class="skill-pill stagger-child">Data analysis &amp; statistics</span>
@@ -2238,13 +2348,13 @@
         </div>
         <div class="cert-row stagger-child">
           <div class="cert-name">English</div>
-          <div class="cert-detail">TOEIC Score 825 / Eiken Pre-1 Grade</div>
-          <div class="cert-year">—</div>
+          <div class="cert-detail">TOEIC 825 · Eiken Pre-1</div>
+          <div class="cert-year">2020–21</div>
         </div>
         <div class="cert-row stagger-child">
           <div class="cert-name">Chinese</div>
           <div class="cert-detail">HSK (Chinese Proficiency Test) — Level 4</div>
-          <div class="cert-year">—</div>
+          <div class="cert-year">2021</div>
         </div>
         <div class="cert-row stagger-child">
           <div class="cert-name">Mathematics Proficiency Test (Suken)</div>
