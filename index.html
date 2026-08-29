@@ -2435,33 +2435,49 @@
 
 <script>
   // Scroll-reveal for sections and cards
-  const revealEls = document.querySelectorAll('.reveal:not(#highlight .reveal):not(#about .reveal), .bracket:not(#highlight .bracket):not(#about .bracket)');
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.15 });
-  revealEls.forEach(el => io.observe(el));
-
-  // About and Highlight sections reveal earlier (lower threshold) so content
-  // appears sooner without waiting for a large chunk to scroll into view
-  const earlyRevealEls = document.querySelectorAll('#highlight .reveal, #highlight .bracket, #about .reveal, #about .bracket');
-  const earlyIo = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('in-view');
-        earlyIo.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  earlyRevealEls.forEach(el => earlyIo.observe(el));
+  const isMobile = window.matchMedia('(max-width:980px)').matches;
+  
+  if (isMobile) {
+    // Mobile: About and Highlight sections reveal earlier (lower threshold)
+    const earlyRevealEls = document.querySelectorAll('#highlight .reveal, #highlight .bracket, #about .reveal, #about .bracket');
+    const earlyIo = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          earlyIo.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    earlyRevealEls.forEach(el => earlyIo.observe(el));
+    
+    // Other sections use standard threshold
+    const revealEls = document.querySelectorAll('.reveal:not(#highlight .reveal):not(#about .reveal), .bracket:not(#highlight .bracket):not(#about .bracket)');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  } else {
+    // Desktop: All sections use standard threshold
+    const revealEls = document.querySelectorAll('.reveal, .bracket');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('in-view');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+  }
 
   // Staggered cascade delay for grouped children (highlight cards, work cards,
   // strength cards, timeline columns, skill pills, cert rows)
-  const staggerStep = window.matchMedia('(max-width:980px)').matches ? 0.05 : 0.08;
+  const staggerStep = isMobile ? 0.05 : 0.08;
   document.querySelectorAll('.reveal').forEach(group => {
     const children = group.querySelectorAll(':scope > .stagger-child');
     children.forEach((child, i) => {
