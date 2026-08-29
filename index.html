@@ -844,7 +844,7 @@
     gap:20px;
   }
   @media (max-width:700px){
-    .adobe-page-grid{grid-template-columns:1fr;}
+    .adobe-page-grid{grid-template-columns:1fr; gap:32px;}
   }
   .adobe-page-card{
     display:block;
@@ -1188,6 +1188,8 @@
   }
   @media (max-width:860px){
     .about-grid{grid-template-columns:1fr;}
+    .about-block{ padding:28px 24px; }
+    .about-block + .about-block{ padding-top:32px; }
   }
   .about-block{
     background:var(--paper);
@@ -1624,6 +1626,15 @@
     transform:translateY(0);
   }
 
+  @media (max-width:980px){
+    .reveal{
+      transition:opacity .5s cubic-bezier(0.4, 0, 0.2, 1), transform .5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .reveal > .stagger-child{
+      transition:opacity .4s cubic-bezier(0.4, 0, 0.2, 1), transform .4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+  }
+
 </style>
 </head>
 <body>
@@ -1713,7 +1724,7 @@
             A few dispatch roles later I landed at <strong>framelunch</strong>, and was placed
             on <strong>Adobe's own web team</strong> for two and a half years — promoted to
             Senior Web Producer along the way, and eventually serving as primary Web Producer
-            for Adobe Acrobat's Japan pages (and secondary for Creative Cloud's). When the
+            for Adobe Acrobat's Japan pages (and secondary for Creative Cloud's Japan pages). When the
             assignment wrapped in 2026, I returned to framelunch's core team as
             <strong>Web Director</strong>.
           </p>
@@ -1740,24 +1751,25 @@
             </div>
             <div class="path-step">
               <div class="path-step-year">2026–</div>
-              <div class="path-step-text">framelunch — Web Director<span>Returned to core team after the Adobe assignment ended</span></div>
+              <div class="path-step-text">framelunch — Web Director<span>Directing SHOSA, Force of the Horse (FOTH), and internal AI knowledge sharing — a small agency, so the title covers real range</span></div>
             </div>
           </div>
         </div>
 
         <div class="about-block">
-          <span class="about-block-label">Off the clock</span>
+          <span class="about-block-label">The thread</span>
           <p>
             I've played Yu-Gi-Oh! for 25 years. It's where my interest in
             probability and statistics actually started — long before the math degree.
           </p>
           <p>
-            These days that instinct shows up in Force of the Horse, an
-            original horse-racing-themed trading card game I'm designing, building the
-            community platform for, and running events around.
+            That background, combined with my web skills, is why framelunch brought
+            me onto <strong>Force of the Horse</strong> after my Adobe assignment
+            wrapped — the company's own horse-racing-themed trading card game. I
+            design cards, build the community platform, and run events around it.
           </p>
 
-          <span class="about-block-label" style="margin-top:8px;">Languages</span>
+          <span class="about-block-label" style="margin-top:24px;">Languages</span>
           <div class="lang-list">
             <div class="lang-row">
               <span class="lang-name">Japanese</span>
@@ -1846,9 +1858,11 @@
           <div class="highlight-metric">Tied for 1st</div>
           <h3 class="highlight-title">Tied for first, lost on tiebreaker</h3>
           <p class="highlight-text">
-            Pitched and prototyped an AI-driven concept in an internal ideathon,
-            finishing tied for first place among all entries before narrowly losing
-            the tiebreaker.
+            Pitched and prototyped the PTO Return Kit — a Claude-powered tool that
+            digs through the email, Slack, and Teams messages piled up during a
+            person's time off and turns them into a return-day to-do list plus
+            summaries and highlights of what was missed. Finished tied for first
+            place among all entries before narrowly losing the tiebreaker.
           </p>
           <button class="detail-toggle" data-target="detail-ideathon" aria-expanded="false">See detail <span class="chevron">→</span></button>
         </div>
@@ -1934,17 +1948,18 @@
           </div>
           <div class="detail-facts">
             <div><span class="detail-label">Result</span><span class="detail-value">Tied for 1st (judges' scoring) — June 2026</span></div>
+            <div><span class="detail-label">Product</span><span class="detail-value">PTO Return Kit</span></div>
             <div><span class="detail-label">AI tool</span><span class="detail-value">Claude (Anthropic)</span></div>
             <div><span class="detail-label">Focus</span><span class="detail-value">AI / Product thinking</span></div>
             <div><span class="detail-label">Context</span><span class="detail-value">Internal Adobe innovation challenge</span></div>
           </div>
           <div class="detail-section">
             <h4>Challenge</h4>
-            <p>The Ideathon asked participants to apply AI and product thinking to a real internal business problem — not a theoretical AI use case, but something with tangible operational value.</p>
+            <p>At Adobe, the volume of email, Slack, and Teams messages is high enough that missing even one day off leaves you noticeably behind. The Ideathon asked participants to apply AI and product thinking to a real internal business problem — not a theoretical AI use case, but something with tangible operational value.</p>
           </div>
           <div class="detail-section">
             <h4>Approach</h4>
-            <p>I used Claude throughout ideation and development to structure my thinking, explore alternative approaches, and refine the concept — then built out the proposal around a practical, immediately usable solution.</p>
+            <p>I used Claude throughout ideation and development to structure my thinking, explore alternative approaches, and refine the concept. The result was the PTO Return Kit: a tool that has Claude go through everything that piled up while someone was out — email, Slack, Teams — and turn it into a ready-to-use return-day to-do list, plus summaries and highlights of the messages received.</p>
           </div>
           <div class="detail-section">
             <h4>Result</h4>
@@ -2000,7 +2015,7 @@
           </div>
           <div class="detail-section">
             <h4>Approach</h4>
-            <p>Built the initial working prototype solo, end to end, and navigated Adobe's internal review process to qualify for Asia Regional Finals. For the finals round, worked with a small team: an engineer refined the prototype, a teammate handled video production, and the live presentation and product Q&amp;A were split between two to three people, including myself. My part in the finals was fielding the product Q&amp;A.</p>
+            <p>Built the initial working prototype solo, end to end, and navigated Adobe's internal review process to qualify for Asia Regional Finals. For the finals round, worked with a small team: an engineer refined the prototype, a teammate handled video production, and the live presentation was split between two to three people, including myself — my part was fielding the product Q&amp;A.</p>
           </div>
           <div class="detail-section">
             <h4>Result</h4>
@@ -2113,7 +2128,7 @@
             <div class="timeline-item-sub">Page updates, scope finalization, QA, and coordination with the global team</div>
           </div>
           <div class="timeline-item">
-            <div class="timeline-item-title">AI API key — How to get an AI API key in Adobe</div>
+            <div class="timeline-item-title">AI API key — Sourcing &amp; approval guide</div>
             <div class="timeline-item-sub">Compiled a unified guide for sourcing and getting legal approval for an API key, based on lessons from Hackathon 2025 — presented it to APAC</div>
           </div>
           <div class="timeline-item">
@@ -2160,8 +2175,9 @@
           <span class="strength-num">04</span>
           <h3 class="strength-title">Full-site ownership</h3>
           <p class="strength-text">
-            Primary Web Producer for Adobe Acrobat's Japan pages, and secondary
-            Web Producer for Creative Cloud's Japan pages — two of Adobe Japan's
+            Primary Web Producer for Adobe Acrobat's Japan pages (2024–26) and for
+            the Customer Success Story pages (2024–25), with secondary coverage
+            for Creative Cloud's Japan pages — some of Adobe Japan's
             highest-traffic properties.
           </p>
         </div>
@@ -2215,7 +2231,7 @@
           <span class="section-index">04 — Work</span>
           <h2 class="section-title">Things I've built</h2>
         </div>
-        <p class="section-sub">Self-directed products and client work, from idea to working prototype.</p>
+        <p class="section-sub">Self-directed products and professional work, from idea to working prototype.</p>
       </div>
 
       <div class="work-carousel-wrap">
@@ -2235,7 +2251,7 @@
               qualified for Asia Regional Finals, where a small team took it further —
               an engineer refined the prototype and a teammate produced the video,
               with the live presentation and Q&amp;A split among the team. Not launched
-              into production — the underlying need is now better served by
+              in production — the underlying need is now better served by
               general-purpose AI assistants, especially for understanding images
               inside design tools like Figma.
             </p>
@@ -2247,12 +2263,15 @@
             <img src="work-foth.jpg" alt="Force of the Horse — Players Portal">
           </a>
           <div class="work-body">
-            <span class="work-eyebrow">Self-directed · Community platform</span>
+            <span class="work-eyebrow">framelunch · Community platform &amp; digital tools</span>
             <h3 class="work-title">FOTH — TCG Community Platform</h3>
             <p class="work-text">
-              Designed and built a multi-page community site for an original
-              horse-racing-themed trading card game — event calendar, FAQ system,
-              and a Google Apps Script backend.
+              Brought onto framelunch's own trading card game project after the
+              Adobe assignment ended, on the strength of 25 years of competitive
+              play and web skills. Designed and built a multi-page community site
+              — event calendar, FAQ system, and a Google Apps Script backend. Also
+              building a digital simulation tool to help players learn the rules
+              and to draw in people who picked up a card pack on impulse.
             </p>
             <a class="work-live-link" href="https://yukisakai1.github.io/force-of-the-horse-community/index.html" target="_blank" rel="noopener">Visit live site →</a>
           </div>
@@ -2416,7 +2435,7 @@
 
 <script>
   // Scroll-reveal for sections and cards
-  const revealEls = document.querySelectorAll('.reveal, .bracket');
+  const revealEls = document.querySelectorAll('.reveal:not(#highlight .reveal):not(#about .reveal), .bracket:not(#highlight .bracket):not(#about .bracket)');
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
@@ -2427,12 +2446,26 @@
   }, { threshold: 0.15 });
   revealEls.forEach(el => io.observe(el));
 
+  // About and Highlight sections reveal earlier (lower threshold) so content
+  // appears sooner without waiting for a large chunk to scroll into view
+  const earlyRevealEls = document.querySelectorAll('#highlight .reveal, #highlight .bracket, #about .reveal, #about .bracket');
+  const earlyIo = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        earlyIo.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  earlyRevealEls.forEach(el => earlyIo.observe(el));
+
   // Staggered cascade delay for grouped children (highlight cards, work cards,
   // strength cards, timeline columns, skill pills, cert rows)
+  const staggerStep = window.matchMedia('(max-width:980px)').matches ? 0.05 : 0.08;
   document.querySelectorAll('.reveal').forEach(group => {
     const children = group.querySelectorAll(':scope > .stagger-child');
     children.forEach((child, i) => {
-      child.style.transitionDelay = (i * 0.08) + 's';
+      child.style.transitionDelay = (i * staggerStep) + 's';
     });
   });
 
