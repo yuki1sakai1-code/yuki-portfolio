@@ -907,6 +907,11 @@
       background: var(--bg-work);
     }
 
+    /* Work only: tighter gap between the section header and the carousel */
+    #work .section-head {
+      margin-bottom: 32px;
+    }
+
     #work::before {
       content: "";
       position: absolute;
@@ -1032,6 +1037,8 @@
       display: flex;
       justify-content: space-between;
       align-items: flex-end;
+      /* align the subtitle's last line with the title baseline (falls back to flex-end) */
+      align-items: last baseline;
       margin-bottom: 52px;
       gap: 24px;
       flex-wrap: wrap;
@@ -2427,13 +2434,14 @@
           <div class="highlight-card bracket stagger-child" id="card-ideathon">
             <span class="highlight-tag">AI Ideathon 2026</span>
             <div class="highlight-metric">Claude-powered idea, top-rated</div>
-            <h3 class="highlight-title">Tied for first, lost on tiebreaker</h3>
+            <h3 class="highlight-title">Pitched the PTO Return Kit for catching up after time off</h3>
             <p class="highlight-text">
               Pitched and prototyped the PTO Return Kit — a Claude-powered tool that
               digs through the email, Slack, and Teams messages piled up during a
               person's time off and turns them into a return-day to-do list plus
-              summaries and highlights of what was missed. Finished tied for first
-              place among all entries before narrowly losing the tiebreaker.
+              summaries and highlights of what was missed. Scored among the top entries
+              in the judges' initial scoring before narrowly missing the top spot on a
+              tiebreaker.
             </p>
             <button class="detail-toggle" data-target="detail-ideathon" aria-expanded="false">See detail <span
                 class="chevron">→</span></button>
@@ -2538,12 +2546,12 @@
               <div class="detail-panel-head">
                 <div>
                   <span class="detail-panel-tag">AI Ideathon 2026</span>
-                  <h4 class="detail-panel-title">Tied for first, lost on tiebreaker</h4>
+                  <h4 class="detail-panel-title">Pitched the PTO Return Kit for catching up after time off</h4>
                 </div>
                 <button class="detail-close" aria-label="Close detail">×</button>
               </div>
               <div class="detail-facts">
-                <div><span class="detail-label">Result</span><span class="detail-value">Tied for 1st (judges' scoring) —
+                <div><span class="detail-label">Result</span><span class="detail-value">Top-rated in judges' scoring —
                     June 2026</span></div>
                 <div><span class="detail-label">Product</span><span class="detail-value">PTO Return Kit</span></div>
                 <div><span class="detail-label">AI tool</span><span class="detail-value">Claude (Anthropic)</span></div>
@@ -2568,7 +2576,7 @@
               </div>
               <div class="detail-section">
                 <h4>Result</h4>
-                <p>My entry was the top-rated idea in the judges' initial scoring, tying for first place. Another entry
+                <p>My entry was the top-rated idea in the judges' initial scoring. Another entry
                   narrowly edged ahead on the final tiebreaker — but the result validated the approach and its practical
                   value.</p>
               </div>
@@ -2771,7 +2779,7 @@
               <div class="timeline-item-sub">Gave the initial idea and built the prototype</div>
             </div>
             <div class="timeline-item">
-              <div class="timeline-item-title">AI Ideathon — Tied for 1st</div>
+              <div class="timeline-item-title">AI Ideathon — Top-rated idea</div>
             </div>
           </div>
         </div>
@@ -2795,7 +2803,7 @@
           </div>
           <div class="strength-card stagger-child">
             <span class="strength-num">03</span>
-            <h3 class="strength-title">Trusted to lead</h3>
+            <h3 class="strength-title">Trusted to lead in a pinch</h3>
             <p class="strength-text">
               Stepped in as project lead on the Acrobat soft bundle project when the regular
               lead was out sick — a level of trust that goes beyond a standard
@@ -2864,7 +2872,7 @@
             <span class="section-index">04 — Work</span>
             <h2 class="section-title">Selected work</h2>
           </div>
-          <p class="section-sub">Self-directed products and professional work, from idea to working prototype.</p>
+          <p class="section-sub">Beyond Adobe: dispatch projects, framelunch products, and self-directed builds.</p>
         </div>
 
         <div class="work-carousel-wrap">
